@@ -1,0 +1,20 @@
+https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction#
+
+Assignment 1
+
+As you know, auto-regressive models assume weak stationarity. What happens if this assumption does not hold? To study the effect of non-stationarity,
+we will add a linear trend to the “Appliances” column of the dataset, which measures the energy consumption of appliances across a period of 4.5 months.
+- First, preprocess the dataset to remove any trend (if necessary)
+- Perform an autoregressive analysis on the clean time series
+- Add a linear trend to the time series
+- Perform the autoregressive analysis on the new time series
+
+Show the results of the analysis with and without the linear trend, discussing your design choices and the results.
+To perform the autoregressive analysis, fit an autoregressive model on the first 3 months of data and estimate performance on the remaining 1.5 months.
+Remember to update the autoregressive model as you progress through the 1.5 testing months. For instance, if you have trained the model until time T,
+use it to predict at time T+1. Then to predict at time T+2 retrain the model using data until time T+1. And so on.
+You might also try and experimenting with less "computationally heavy" retraining schedule (e.g. retrain only "when necessary").
+You can use the autoregressive model of your choice (AR, ARMA, ...).
+
+Hint: in Python, use the ARIMA class of the statsmodels library (set order=(3,0,0) for an AR of order 3);
+in Matlab you can use the ar function to fit the model and the forecast function to test.
