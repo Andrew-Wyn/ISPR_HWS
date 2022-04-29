@@ -1,0 +1,9 @@
+Train a denoising or a contractive autoencoder on the MNIST dataset: try out different architectures for the autoencoder, including a single layer autoencoder, a deep autoencoder with only layerwise pretraining and a deep autoencoder with fine tuning. It is up to you to decide how many neurons in each layer and how many layers you want in the deep autoencoder. Show an accuracy comparison between the different configurations.
+
+given the encoding z1 of image x1 and z2 of image x2, a latent space interpolation is an encoding that obtained with the linear interpolation z* = a*z1 + (1 - a)*z2, with a in [0, 1]. Perform a latent space interpolation and visualize the results using:
+- z1 and z2 from the same class
+- z1 and z2 from different classes
+Plot the results, for example by showing the image reconstructions for a=0.0, 0.1, 0.2, …, 1.0. Are the resulting images plausible digits?
+
+Try out what happens if you feed one of the autoencoders with a random noise image and then you apply the iterative gradient ascent process described in the lecture to see if the reconstruction converges to the data manifold.
+
